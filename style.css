@@ -1,0 +1,30 @@
+html, body{
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+ul{
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 37.5%;
+	outline: 1px red solid;
+	display: block;
+}
+li{
+	height: 12.4%;
+	border-bottom: 1px blue solid;
+	display: block;
+}
+p{
+	padding: 35px 0 0 90px;
+	margin: 0;
+}
+img{
+	float: left;
+	padding-top: 15px;
+	padding-left: 5px;
+}
+div{
+}
