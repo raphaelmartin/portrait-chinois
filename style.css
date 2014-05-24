@@ -13,9 +13,12 @@ ul{
 	display: block;
 }
 li{
-	height: 12.4%;
+	height: 11.4%;
 	border-bottom: 1px blue solid;
 	display: block;
+}
+li#first{
+	height: 8%;
 }
 p{
 	padding: 35px 0 0 90px;
