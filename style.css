@@ -4,20 +4,29 @@ html, body{
 	height: 100%;
 }
 
+/* On définit les propriétés du menu des Messages*/
 ul{
 	margin: 0;
 	padding: 0;
 	height: 100%;
-	width: 30%;
+	width: 25%;
 	border-right: 1px solid #8e8e93;
 	display: block;
 }
 
+.gauche{
+	text-align: left;
+}
+
+/* On définit les propriétés de chaque Message*/
 li{
-	height: 11.2%;
+	margin: 0;
+	padding: 0;
+	height: 11.3%;
 	display: block;
 }
 
+/* Correspond au titre du menu */
 li#first{
 	height: 8%;
 }
@@ -43,6 +52,7 @@ p{
 	position: relative;
 	bottom: 5px;
 	left: 3px;
+	padding-top: 3%;
 
 }
 
@@ -55,7 +65,7 @@ strong{
 
 img{
 	float: left;
-	padding-top: 11px;
-	padding-left: 25px;
-	padding-right: 3px;
+	padding-top: 4.5%;
+	padding-left: 5%;
+	padding-right: 1%;
 }

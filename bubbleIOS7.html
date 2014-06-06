@@ -37,6 +37,7 @@ section div {
   padding: 7px 20px;
   color: white;
   background: #0B93F6;
+  -moz-border-radius: 25px;
   border-radius: 25px;
   float: right;
 }
@@ -51,6 +52,9 @@ section div {
   border-right: 20px solid #0B93F6;
   border-bottom-left-radius: 16px 14px;
   -webkit-transform: translate(0, -2px);
+  -ms-transform: translate(0,-2px);
+  -moz-transform: translate(0,-2px);
+  transform: translate(0,-2px);
 }
 
 .from-me:after {
@@ -64,12 +68,16 @@ section div {
   background: white;
   border-bottom-left-radius: 10px;
   -webkit-transform: translate(-30px, -2px);
+  -ms-transform: translate(-30px,-2px);
+  -moz-transform: translate(-30px,-2px);
+  transform: translate(-30px,-2px);
 }
 
 .from-them {
   position: relative;
   padding: 7px 20px;
   background: #E5E5EA;
+  -moz-border-radius: 25px;
   border-radius: 25px;
   color: black;
   float: left;
@@ -85,6 +93,9 @@ section div {
   border-left: 20px solid #E5E5EA;
   border-bottom-right-radius: 16px 14px;
   -webkit-transform: translate(0, -2px);
+  -ms-transform: translate(0,-2px);
+  -moz-transform: translate(0,-2px);
+  transform: translate(0,-2px);
 }
 
 .from-them:after {
@@ -98,11 +109,15 @@ section div {
   background: white;
   border-bottom-right-radius: 10px;
   -webkit-transform: translate(-30px, -2px);
+  -ms-transform: translate(-30px,-2px);
+  -moz-transform: translate(-30px,-2px);
+  transform: translate(-30px,-2px);
 }
 
 img{
   width: 160px;
   height: 230px;
+  -moz-border-radius: 25px;
   border-radius: 16px;
   float: right;
 }
