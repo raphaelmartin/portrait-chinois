@@ -16,23 +16,23 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-section {
+section{
   max-width: 450px;
   margin: 0 4%;
 }
 
-section div {
+section div{
   max-width: 250px;
   word-wrap: break-word;
   margin-bottom: 4px;
   line-height: 20px;
 }
 
-.clear {
+.clear{
   clear: both;
 }
 
-.from-me {
+.from-me{
   position: relative;
   padding: 7px 20px;
   color: white;
@@ -42,7 +42,7 @@ section div {
   float: right;
 }
 
-.from-me:before {
+.from-me:before{
   content: "";
   position: absolute;
   z-index: -1;
@@ -57,7 +57,7 @@ section div {
   transform: translate(0,-2px);
 }
 
-.from-me:after {
+.from-me:after{
   content: "";
   position: absolute;
   z-index: 1;
@@ -73,7 +73,7 @@ section div {
   transform: translate(-30px,-2px);
 }
 
-.from-them {
+.from-them{
   position: relative;
   padding: 7px 20px;
   background: #E5E5EA;
@@ -83,7 +83,7 @@ section div {
   float: left;
 }
 
-.from-them:before {
+.from-them:before{
   content: "";
   position: absolute;
   z-index: 2;
@@ -98,7 +98,7 @@ section div {
   transform: translate(0,-2px);
 }
 
-.from-them:after {
+.from-them:after{
   content: "";
   position: absolute;
   z-index: 3;
@@ -114,7 +114,7 @@ section div {
   transform: translate(-30px,-2px);
 }
 
-img{
+img.bubble{
   width: 160px;
   height: 230px;
   -moz-border-radius: 25px;
@@ -153,7 +153,7 @@ img{
 
 <!-- Une image zoomable au clic -->
       <a class="image-link" href="imgbubble/chat.jpg">
-      <img src="imgbubble/chat.jpg"></a>
+      <img src="imgbubble/chat.jpg" class="bubble"></a>
       <div class="clear"></div>
 </section>
 

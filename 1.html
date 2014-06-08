@@ -1,84 +1,126 @@
 <!doctype html>
-<html lang="fr">
+<html lang='fr'>
 <head>
-<meta charset="utf-8">
-<link rel="stylesheet" type="text/css" href="style.css">
+<meta charset='utf-8'>
+<link rel="stylesheet" type="text/css" href='style.css'>
+<link rel="stylesheet" href='mp.css'>
 <title></title>
 </head>
 <body>
 
 <!-- MENU GAUCHE STYLE iMESSAGE -->
 <ul>
-	<li id="first">
-		<p><span class="gauche">Modifier</span><span class="centre">Si j'étais...</span><img src="writemail.png" alt="M'envoyer un message" width="23" height="23"></p>
-	</li>
+	<li class="first">
+		<span class="gauche">Modifier</span><span class="center"><strong class="titre">Si j'étais...</strong></span><img src="writemail.png" alt="M'envoyer un message" id="writemail">
+	</li><hr>
 
 	<li>
-		<img src="imground/girafe.jpg">
-		<p>
+		<img src="imground/girafe.jpg" class="imgmenu">
+		<p class="message">
 		<strong>Une forme</strong><br>
-		Le triangle de Penrose.
-		</p>
-	</li><hr>
+		Le triangle de Penrose.</p>
+	</li><hr id="menu">
 
 	<li>
-		<img src="imground/girafe.jpg">
-		<p>
+		<img src="imground/girafe.jpg" class="imgmenu">
+		<p class="message">
 		<strong>Un fruit</strong><br>
-		Le litchi.
-		</p>
-	</li><hr>
+		Le litchi.</p>
+	</li><hr id="menu">
 
 	<li>
-		<img src="imground/girafe.jpg">
-		<p>
+		<img src="imground/girafe.jpg" class="imgmenu">
+		<p class="message">
 		<strong>Un magazine</strong><br>
-		
-		</p>
-	</li><hr>
+		Ceci est un titre de magazine.</p>
+	</li><hr id="menu">
 
 	<li>
-		<img src="imground/girafe.jpg">
-		<p>
+		<img src="imground/girafe.jpg" class="imgmenu">
+		<p class="message">
 		<strong>Un vêtement</strong><br>
-		La salopette.
-		</p>
-	</li><hr>
+		La salopette.</p>
+	</li><hr id="menu">
 
 	<li>
-		<img src="imground/girafe.jpg">
-		<p>
+		<img src="imground/girafe.jpg" class="imgmenu">
+		<p class="message">
 		<strong>Un roman</strong><br>
-		La discrétion ou l'art de disparaître - Pierre Zaoui.
-		</p>
-	</li><hr>
+		La discrétion ou l'art de disparaître - Pierre Zaoui.</p>
+	</li><hr id="menu">
 
 	<li>
-		<img src="imground/girafe.jpg">
-		<p>
+		<img src="imground/girafe.jpg" class="imgmenu">
+		<p class="message">
 		<strong>Un site web</strong><br>
-		Euuuuuh.... la girafe! J'ai toujours rêver de bouffer des branches...
-		</p>
-	</li><hr>
+		Euuuuuh.... la girafe! J'ai toujours rêver de bouffer des branches...</p>
+	</li><hr id="menu">
 
 	<li>
-		<img src="imground/girafe.jpg">
-		<p>
+		<img src="imground/girafe.jpg" class="imgmenu">
+		<p class="message">
 		<strong>Un artiste musical</strong><br>
-		LM.C
-		</p>
-	</li><hr>
+		LM.C</p>
+	</li><hr id="menu">
 
 	<li>
-		<img src="imground/girafe.jpg">
-		<p>
+		<img src="imground/girafe.jpg" class="imgmenu">
+		<p class="message">
 		<strong>Un personnage historique</strong><br>
-		Marie Antoinette.
-		</p>
-	</li><hr>
+		Marie Antoinette.</p></li>
 
 </ul>
 <!-- FIN DU MENU GAUCHE -->
+<div class="menucentre"><p><strong class="titre">Un animal</strong></p></div>
+<section>
+      <!-- Chaque <div> = une bulle iMessage -->
+      <div class="from-them">
+      <p>Ca t'ait déjà venu à l'esprit de vouloir être un animal?</p></div>
+      <div class="clear"></div>
+      
+      <div class="from-me">
+      <p>Bof non, jamais...pourquoi?</p></div>
+      <div class="clear"></div>
+      
+      <div class="from-them">
+      <p>Bah comme ça. Tout le monde a toujours voulu être quelque chose qu'il n'est pas. Moi par exemple, je rêverais d'être un dauphin!</p></div>
+      <div class="clear"></div>
+      
+      <div class="from-me">
+      <p>Ah oui...mais le plancton finirait par me lasser je pense...</p></div>
+      <div class="clear"></div>
+      
+      <div class="from-them">
+      <p>Bah quel animal mange des trucs que tu kifferais tester?</p></div>
+      <div class="clear"></div>
+      
+      <div class="from-me">
+      <p>Euuuuuh.... la girafe! J'ai toujours rêver de bouffer des branches d'arbres.</p></div>
+      <div class="clear"></div>
 
+<!-- Une image zoomable au clic -->
+      <a class="image-link" href="imgbubble/chat.jpg">
+      <img src="imgbubble/chat.jpg" class="bubble"></a>
+      <div class="clear"></div>
+</section>
+
+<!-- Scripts JQuery + Zoom -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="magnificpopup.js"></script>
+<script>
+$('.image-link').magnificPopup({ 
+  type: 'image',
+  mainClass: 'mfp-with-zoom',
+  zoom: {
+    enabled: true,
+    duration: 300,
+    easing: 'ease-in-out',
+    opener: function(openerElement) {
+    return openerElement.is('img') ? openerElement : openerElement.find('img');
+    }
+  }
+
+});</script>
+<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
 </body>
 </html>
