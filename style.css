@@ -23,7 +23,7 @@ html, body{
   	-webkit-font-smoothing: subpixel-antialiased;
   	-moz-font-smoothing: subpixel-antialiased;
   	font-smoothing: subpixel-antialiased;
-  	overflow: hidden;
+  	/*overflow: hidden;*/
 }
 
 /* !LEFT SECTION! */
@@ -91,6 +91,8 @@ hr{
     width: 100%;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    position: relative;
+    z-index: 10;
 }
 
 hr#menu{
@@ -152,10 +154,11 @@ div p{
 
 /* Le wrapper contenant toutes les bulles de Messages */
 section{
-  width: 67%;
-  float: left;
-  margin: 1% 2%;
-  display:block;
+width: 71%;
+float: left;
+margin: 0;
+padding: 0;
+display:block;
 }
 
 section div{
@@ -223,6 +226,8 @@ p{
   border-radius: 25px;
   color: black;
   float: left;
+  margin-left: 10px;
+  margin-top: 10px;
 }
 
 .from-them:before{
@@ -248,7 +253,7 @@ p{
   left: 4px;
   width: 26px;
   height: 20px;
-  background: white;
+  background-color: rgba(255,255,255,0.3);
   border-bottom-right-radius: 10px;
   -webkit-transform: translate(-30px, -2px);
   -ms-transform: translate(-30px,-2px);
