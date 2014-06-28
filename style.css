@@ -16,6 +16,7 @@ html, body{
 	margin: 0;
 	padding: 0;
 	height: 100%;
+  width: 100%;
 	font-family: "HNLight";
 	font-size: 1em;
 	font-weight: normal;
@@ -23,7 +24,7 @@ html, body{
   	-webkit-font-smoothing: subpixel-antialiased;
   	-moz-font-smoothing: subpixel-antialiased;
   	font-smoothing: subpixel-antialiased;
-  	/*overflow: hidden;*/
+  	overflow: hidden;
 }
 
 /* !LEFT SECTION! */
@@ -38,6 +39,8 @@ ul{
 	float: left;
 	display: block;
 	list-style-type: none;
+  z-index: 11;
+  position: relative;
 }
 
 /* On définit les propriétés de chaque Message */
@@ -50,30 +53,34 @@ li{
 
 /* Corresponds au titre du menu */
 li.first{
-	height:7%;
+	height:6%;
 	width:100%;
 	background-color: #f8f8f8;
 	text-align: center;
 }
 
-/* Picto e-mail */
+li#visited{
+  background-color: #d9d9d9;
+}
+
+/* Picto CV */
 img#writemail{
 	float: right;
 	display: inline;
-	position: absolute;
-	left: 26%;
-	top: 1.7%;
+  position: relative;
+  top: 34%;
+  right: 1%;
+}
+
+img#writemail:hover{
+  cursor: pointer;
 }
 
 span{
 	margin:0;
 	padding:0;
 	position: relative;
-	top:30%;
-}
-
-span.center{
-	right: 7%;
+  top:37%;
 }
 
 span.gauche{
@@ -81,6 +88,20 @@ span.gauche{
 	left: 2%;
 	color: #0d7aff;
 	font-size: 1.1em;
+}
+
+li a, a#returnkey{
+  text-decoration: none;
+  color: inherit;
+}
+
+li a:visited, a#returnkey{
+  text-decoration: none;
+  color: inherit;
+}
+
+li a:hover{
+  color:#0d7aff;
 }
 
 hr{
@@ -95,7 +116,7 @@ hr{
     z-index: 10;
 }
 
-hr#menu{
+hr.menu{
 	border-top: 1px solid rgba(0, 0, 0, 0.1);
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
     width:95%;
@@ -106,7 +127,8 @@ hr#menu{
 p.message{
 	color: #8e8e93;
 	display: inline-block;
-	width: 310px;
+	max-width: 310px;
+  word-wrap: break-word;
 	position: relative;
 	left: 7%;
 	top: 13%;
@@ -114,9 +136,9 @@ p.message{
 
 strong{
 	color:black;
-	font-family: "HNRegular";
+	font-family: 'HNRegular';
 	font-weight: normal;
-	font-size: 1.08em;
+	font-size: 16px;
 }
 
 strong.titre{
@@ -130,21 +152,16 @@ img.imgmenu{
 	left: 5%;
 }
 
-/* !RIGHT SECTION! */
-
-/* La section titre principal en haut à droite */
+/* !RIGHT SECTION!
+La section titre principal en haut à droite */
 div.menucentre{
-  height: 7%;
+  height: 6%;
   width: 72%;
-  position: relative;
-  left: 28%;
+  float: right;
   background-color: #f8f8f8;
-  border-bottom: 1px solid #e6e6e6;
-  border-left: 1px solid #8e8e93;
-}
-
-div.menucentre p{
-	left: 5%;
+  outline: 1px solid #e6e6e6;
+  margin-bottom: 10px;
+  text-align: center;
 }
 
 div p{
@@ -153,7 +170,7 @@ div p{
 }
 
 /* Le wrapper contenant toutes les bulles de Messages */
-section{
+section.bullesios{
 width: 71%;
 float: left;
 margin: 0;
@@ -161,8 +178,8 @@ padding: 0;
 display:block;
 }
 
-section div{
-  max-width: 250px;
+section.bullesios div{
+  max-width: 360px;
   word-wrap: break-word;
   margin-bottom:2px;
   line-height: 20px;
@@ -226,8 +243,7 @@ p{
   border-radius: 25px;
   color: black;
   float: left;
-  margin-left: 10px;
-  margin-top: 10px;
+  margin-left: 15px;
 }
 
 .from-them:before{
@@ -253,7 +269,7 @@ p{
   left: 4px;
   width: 26px;
   height: 20px;
-  background-color: rgba(255,255,255,0.3);
+  background-color: rgb(255,255,255);
   border-bottom-right-radius: 10px;
   -webkit-transform: translate(-30px, -2px);
   -ms-transform: translate(-30px,-2px);
@@ -261,10 +277,337 @@ p{
   transform: translate(-30px,-2px);
 }
 
-img.bubble{
+img.bubble-portrait{
   width: 160px;
   height: 230px;
   -moz-border-radius: 25px;
   border-radius: 16px;
   float: right;
+}
+
+img.bubble-portrait-l{
+  width: 160px;
+  height: 230px;
+  -moz-border-radius: 25px;
+  border-radius: 16px;
+  float: left;
+  margin-left: 1%;
+}
+
+img.bubble-paysage{
+  width: 230px;
+  height: 200px;
+  -moz-border-radius:25px;
+  border-radius: 16px;
+  float: right;
+}
+
+/* --- !FORMULAIRE IN-LINE! --- */
+
+*, *:after, *:before { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+.clearfix:before, .clearfix:after { content: ''; display: table; }
+.clearfix:after { clear: both; }
+
+::-webkit-input-placeholder {
+   font-family: 'HNLight';
+   font-size: 1em;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   font-family: 'HNLight';
+   font-size: 1em;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   font-family: 'HNLight';
+   font-size: 1em;
+}
+
+:-ms-input-placeholder {  
+   font-family: 'HNLight';
+   font-size: 1em; 
+}
+
+div.container{
+  width: 60%;
+  position: absolute;
+  bottom:5%;
+  right:0;
+  margin-right: 5px;
+}
+
+footer{
+  height: 55px;
+  padding:0;
+  margin: 0;
+  position: absolute;
+  bottom:0;
+  right: 0;
+  background-color: #ebebeb;
+  width: 72%;
+  border-top: 1px #e0e0e0 solid;
+}
+
+.simform {
+  position: relative;
+  overflow: hidden;
+  margin: 0.3em 0 0.3em 0;
+  padding:0.2em 0 0 0;
+  width: 100%;
+  text-align: left;
+  background-color: rgb(255,255,255);
+  font-size: 1em;
+  border: 1px grey solid;
+  border-radius: 10px;
+}
+
+.simform .submit {
+  display: none;
+}
+
+/* Question list style */
+.simform ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: relative;
+  -webkit-transition: height 0.4s;
+  transition: height 0.4s;
+}
+
+.questions li {
+  z-index: 100;
+  position: relative;
+  visibility: hidden;
+  height: 0;
+  -webkit-transition: visibility 0s 0.4s, height 0s 0.4s;
+  transition: visibility 0s 0.4s, height 0s 0.4s;
+}
+
+.questions li.current,
+.no-js .questions li {
+  visibility: visible;
+  height: auto;
+  -webkit-transition: none;
+  transition: none;
+}
+
+/* Input field */
+.questions input {
+  display: block;
+  margin: 3px 0 0 2px;
+  padding: 3px 0 0 2px;
+  width: 100%;
+  border: none;
+  background: transparent;
+  color: rgb(0,0,0);
+  font-size: 1em;
+  line-height: 1;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+
+.questions .current input,
+.no-js .questions input {
+  opacity: 1;
+}
+
+.questions input:focus,
+.simform button:focus {
+  outline: none;
+}
+
+/* Next question button */
+.next {
+  position: absolute;
+  right: 0;
+  bottom: 2.15em; /* padding-bottom of form plus progress bar height */
+  display: block;
+  padding: 0;
+  width: 2em;
+  height: 2em;
+  border: none;
+  background: none;
+  color: rgba(0,0,0,0.4);
+  text-align: center;
+  opacity: 0;
+  z-index: 100;
+  cursor: pointer;
+  -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+  transition: transform 0.3s, opacity 0.3s;
+  -webkit-transform: translateX(-20%);
+  transform: translateX(-20%);
+  pointer-events: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.next:hover {
+  color: rgba(0,0,0,0.5);
+}
+
+.next::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: "\e600";
+  text-transform: none;
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+  font-family: 'icomoon';
+  line-height: 2;
+  speak: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.next.show {
+  opacity: 1;
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  pointer-events: auto;
+  visibility: hidden;
+}
+
+/* Progress bar */
+.simform .progress {
+  width: 0%;
+  height: 0.2em;
+  background: rgba(0,0,0,0.3);
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+.simform .progress::before {
+  position: absolute;
+  top: auto;
+  width: 100%;
+  height: inherit;
+  background: rgba(0,0,0,0.05);
+  content: '';
+}
+
+/* Number indicator */
+.simform .number {
+  position: absolute;
+  right: 0;
+  overflow: hidden;
+  visibility: hidden;
+  margin: 0.4em 0;
+  width: 3em;
+  font-weight: 700;
+  font-size: 0.4em;
+}
+
+.simform .number:after {
+  position: absolute;
+  left: 50%;
+  content: '/';
+  opacity: 0.4;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+.simform .number span {
+  float: right;
+  width: 40%;
+  text-align: center;
+}
+
+.simform .number .number-current {
+  float: left;
+}
+
+.simform .number-next {
+  position: absolute;
+  left: 0;
+}
+
+.simform.show-next .number-current {
+  -webkit-transition: -webkit-transform 0.4s;
+  transition: transform 0.4s;
+  -webkit-transform: translateY(-100%);
+  transform: translateY(-100%);
+}
+
+.simform.show-next .number-next {
+  -webkit-animation: moveUpFromDown 0.4s both;
+  animation: moveUpFromDown 0.4s both;
+}
+
+/* Error and final message */
+.simform .error-message,
+.simform .final-message {
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: opacity 0.4s;
+  transition: opacity 0.4s;
+}
+
+.simform .error-message {
+  padding: 0.4em 3.5em 0 0;
+  width: 100%;
+  color: rgba(0,0,0,0.7);
+  font-style: italic;
+  font-size: 0.4em;
+}
+
+.final-message {
+  top: 50%;
+  left: 0;
+  padding: 0.5em;
+  width: 100%;
+  text-align: center;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.error-message.show,
+.final-message.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+.final-message.show {
+  -webkit-transition-delay: 0.5s;
+  transition-delay: 0.5s;
+}
+
+/* Final hiding of form / showing message */
+.simform-inner.hide {
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s, visibility 0s 0.3s;
+  transition: opacity 0.3s, visibility 0s 0.3s;
+}
+
+/* No JS Fallback */
+.no-js .simform {
+  font-size: 1.75em;
+}
+
+.no-js .questions li {
+  padding: 0 0 2em;
+}
+
+.no-js .simform .submit {
+  display: block;
+  float: right;
+  padding: 10px 20px;
+  border: none;
+  background: rgba(0,0,0,0.3);
+  color: rgba(0,0,0,0.4);
+}
+
+.no-js .simform .controls {
+  display: none;
+}
+
+/* Remove IE clear cross */
+input[type=text]::-ms-clear {
+    display: none;
 }

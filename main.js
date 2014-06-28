@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	$('#mail').attr('href', 'mailto:bonjour@raphaelmartin.fr');
+	$('#mail').attr('href', 'mailto:itsraphaelmartin@gmail.com');
 
 	var tl = new TimelineMax();
 	tl.from('img', 1, {'top': $(window).innerHeight()+10});
